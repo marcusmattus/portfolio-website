@@ -249,15 +249,95 @@ body {
     z-index: -1;
 }
 
-.profile-image img {
+.profile-glitch {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-glitch img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.1s ease;
 }
 
-.profile-image:hover img {
-    transform: scale(1.05);
+.profile-glitch .profile-img-1 {
+    z-index: 2;
+    animation: glitchSwitch 4s infinite;
+}
+
+.profile-glitch .profile-img-2 {
+    z-index: 1;
+    opacity: 0;
+    animation: glitchSwitch 4s infinite 2s;
+}
+
+.profile-image:hover .profile-glitch .profile-img-1,
+.profile-image:hover .profile-glitch .profile-img-2 {
+    animation: glitchEffect 0.3s infinite, glitchSwitch 1s infinite;
+}
+
+@keyframes glitchSwitch {
+    0%, 45% {
+        opacity: 1;
+    }
+    50%, 95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes glitchEffect {
+    0% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
+    10% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(90deg);
+    }
+    20% {
+        transform: translate(-2px, -2px);
+        filter: hue-rotate(180deg);
+    }
+    30% {
+        transform: translate(2px, 2px);
+        filter: hue-rotate(270deg);
+    }
+    40% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(360deg);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(45deg);
+    }
+    60% {
+        transform: translate(-2px, -2px);
+        filter: hue-rotate(135deg);
+    }
+    70% {
+        transform: translate(2px, 2px);
+        filter: hue-rotate(225deg);
+    }
+    80% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(315deg);
+    }
+    90% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        transform: translate(0);
+        filter: hue-rotate(0deg);
+    }
 }
 
 .scroll-indicator {
