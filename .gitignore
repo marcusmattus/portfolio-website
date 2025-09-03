@@ -1,0 +1,26 @@
+.DS_Store
+*.log
+node_modules/
+dist/
+.env
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+
+# Build outputs
+build/
+public/dist/
+
+# Editor files
+.sublime-project
+.sublime-workspace
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
