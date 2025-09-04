@@ -750,6 +750,12 @@ section {
     box-shadow: var(--shadow);
 }
 
+.x-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
 /* Contact Form */
 .contact-form {
     background: var(--bg-primary);
